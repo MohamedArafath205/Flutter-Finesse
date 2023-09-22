@@ -11,14 +11,17 @@ class PracticePage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {},
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      color: const Color(0xff00FF00),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Icon(Icons.arrow_back,
-                      color: Colors.white, size: 20),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Container(
+                    height: 45,
+                    width: 45,
+                    decoration: BoxDecoration(
+                        color: const Color(0xff00FF00),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Icon(Icons.arrow_back,
+                        color: Colors.white, size: 20),
+                  ),
                 ),
               ),
             ],
@@ -40,14 +43,16 @@ class PracticePage extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.asset("../assets/image.jpg"),
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.asset("assets/image.jpg")),
                   Positioned(
                     left: 40,
                     child: Column(
                       children: [
                         CircleAvatar(
                           child: Image.asset(
-                            "../assets/img1.png",
+                            "assets/img1.png",
                             width: 100,
                           ),
                         )
@@ -56,7 +61,10 @@ class PracticePage extends StatelessWidget {
                   ),
                 ],
               ),
-              const Text("Hello World"),
+              const Padding(
+                padding: EdgeInsets.only(top: 8.0),
+                child: Text("Hello World"),
+              ),
             ],
           ),
         ));
